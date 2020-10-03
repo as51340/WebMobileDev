@@ -3,3 +3,16 @@
 
 - first four folders were all implementation of web shop
 - FlowerPower is android app
+
+#### For installing node-modules
+```
+npm install
+
+```
+
+#### Run application
+
+```
+npm start
+
+```
