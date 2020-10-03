@@ -1,0 +1,27 @@
+.rijecunutar {
+    display: inline-block;
+    position: relative;
+  }
+  
+  
+  .rijecunutar .tooltiptext {
+    visibility: hidden;
+    background-color: white;
+    font-style: italic;
+    color:#ab4f8b;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 22px;
+    right: 0px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid;
+    border-color: #ab4f8b;
+    font-weight: initial;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  

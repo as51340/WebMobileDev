@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="vendor/normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+
+<body class="content body-header-fixed">
+    <header class="header header-fixed primary-color-bg ">
+        <nav class="navigation container">
+            <div class="menu" >
+                <a href="index.html" class="link menu-item">Home</a>
+                <a href="order.html" class="link menu-item link-active">Order</a>
+                <a href="index.html" class="link">
+                    <img class="scaled-image scaled-image-fixed" src="images/logo.svg" alt="Company logo">
+                </a>
+                <a href="#" class="link menu-item">Contact us</a>
+                <a href="#" class="link menu-item cart-menu">
+                    <img src="images/cart-icon.svg" alt="Cart icon">
+                    <div class="cart-menu-status">
+                        <div id="cart-items">0</div>
+                        <div>items</div>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    
+    <div id="category-template">
+        <section class="section secondary-color-bg">
+            <div class="centered-container">
+                <h1 class="decorated-title font-secondary main-color">
+                    <span class="main-color-emphasized">Shopping cart</span>
+                    items</h1>
+                <div class="separator"></div>
+            </div>
+            <div class="gallery">
+            </div>
+        </section>
+    </div>
+
+
+    <main class="main margin-auto">
+            <template id= "cart-template-header">
+                <div class= " cart-header ">
+                <div class= " cart-header-title "> Product </div >
+                <div class= " cart-header-title "> Price </div >
+                <div class= " cart-header-title "> Quantity </div >
+                </div >
+            </template >
+            <template id= "cart-template-item">
+                <div class= " cart-item ">
+                <div class= " cart-item-title "> Tulips </div >
+                <div class= " cart-item-price ">15 kn </div >
+                <input type= " number " class= " cart-item-quantity "> </input >
+                </div >
+            </template >
+
+            <template id= "cart-total-template">
+                <div class= "cart-total">
+                <div > Total: </div >
+                <div id= " cart-total-value "> </div >
+                </div >
+            </template >
+                
+
+
+    </main>
+    
+   
+
+    <script>
+
+    let func = async function() {
+        let response = await fetch("https://wimlab2.azurewebsites.net/products/");
+		let data = await response.json();
+        let main = document.querySelector('main');
+        let div = document.queryCommandValue('margin-auto');
+        let cartTemplate = document.querySelector('#cart-template-header');
+        let hd = cartTemplate.content.cloneNode(true);
+        main.appendChild(hd); 
+        let totalItem = document.querySelector('#cart-total-template');
+        let cart1 = totalItem.content.cloneNode(true);
+        let sum = 0;
+        for (let [key, value] of Object.entries(localStorage)) {
+            let cartItem = document.querySelector('#cart-template-item');
+            let item =  cartItem.content.cloneNode(true);
+            let name = item.querySelector(".cart-item .cart-item-title");
+            let price = item.querySelector(".cart-item .cart-item-price");
+            let quantity = item.querySelector(".cart-item .cart-item-quantity");
+            let id = key;
+        //console.log(data.length);
+            for(let i = 0; i < data.length; i++) {
+            //console.log("tu");
+            if(id == data[i].id) {
+                console.log("tu");   
+                name.textContent = data[i].name;
+                price.textContent = data[i].price;
+                sum =  (Number) (sum) + (Number) (quantity.value) * (Number) (price.textContent);
+                quantity.value = localStorage.getItem(id);
+                main.append(item);
+                break;
+            }
+        }
+
+        
+    }
+    main.append(cart1);
+    }
+    func();
+
+   
+    
+    </script>
+    </body>
+</html>

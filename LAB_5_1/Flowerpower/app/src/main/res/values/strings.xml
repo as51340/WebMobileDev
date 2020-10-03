@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Flower power</string>
+    <string name="toastAddItem">Item added to cart</string>
+    <string name="flowers">Flowers</string>
+    <string name="tools">Tools</string>
+    <string name="pots">Pots</string>
+    <string name="seeds">Seeds</string>
+    <string name="soil">Soil</string>
+    <string name="fertilizers">Fertilizers</string>
+    <string name="feeders">Feeders</string>
+    <string name="gnomes">Gnomes</string>
+    <string name="tulip">Tulip</string>
+    <string name="lavender">Lavender</string>
+    <string name="daisy">Daisy</string>
+    <string name="fucsia">Fucsia</string>
+    <string name="send">Send</string>
+</resources>

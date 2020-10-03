@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Moć cvijeća</string>
+    <string name="toastAddItem">Artikl je dodan u košaricu</string>
+    <string name="flowers">Cvijeće</string>
+    <string name="tools">Alat</string>
+    <string name="pots">Posude</string>
+    <string name="seeds">Sjemenke</string>
+    <string name="soil">Tla</string>
+    <string name="fertilizers">Gnojiva</string>
+    <string name="feeders">Hranilice</string>
+    <string name="gnomes">Patuljci</string>
+    <string name="tulip">Tulipani</string>
+    <string name="lavender">Lavanda</string>
+    <string name="daisy">Tratinčice</string>
+    <string name="fucsia">Fuksija</string>
+    <string name="send">Pošalji</string>
+</resources>
